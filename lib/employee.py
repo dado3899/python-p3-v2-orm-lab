@@ -2,6 +2,7 @@
 from __init__ import CURSOR, CONN
 from department import Department
 
+
 class Employee:
 
     # Dictionary of objects saved to the database.
@@ -187,4 +188,16 @@ class Employee:
 
     def reviews(self):
         """Return list of reviews associated with current employee"""
+        from review import Review
+        r_list = []
+        my_reviews = CURSOR.execute('''
+        SELECT * FROM reviews
+        WHERE employee_id = ?
+        ''', (self.id,)).fetchall()
+        # print(my_reviews)
+        for review_tuple in my_reviews:
+            r_list.append(Review.instance_from_db(review_tuple))
+        
+        return r_list
+
         pass

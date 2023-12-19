@@ -22,10 +22,18 @@ def reset_database():
         "Human Resources", "Building C, East Wing")
     employee1 = Employee.create("Lee", "Manager", payroll.id)
     employee2 = Employee.create("Sasha", "Manager", human_resources.id)
-    Review.create(2023, "Efficient worker", employee1.id)
-    Review.create(2022, "Good work ethic", employee1.id)
-    Review.create(2023, "Excellent communication skills", employee2.id)
+    Review.create(2023, "Efficient worker", 1)
+    Review.create(2022, "Good work ethic", 1)
+    Review.create(2023, "Excellent communication skills", 2)
+    
+    # print(Review.instance_from_db((10,2024,"Nah", 2)))
+    # testR = Review.find_by_id(3)
+    # testR.year = 3030
+    # testR.summary = "Changed"
+    # testR.update()
+    # testR.delete()
+    print(employee1.reviews())
 
 
 reset_database()
-ipdb.set_trace()
+# ipdb.set_trace()

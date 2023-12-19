@@ -63,8 +63,8 @@ table:
 
 This is a class method that should:
 
-- Create a new `Review` instance using the parameter values.
-- Save the new `Review` instance to the "reviews" table.
+- Create a new `Review` insatance using the parameter values.
+- Save the new `Review` instnce to the "reviews" table.
 - Return the new `Review` instance.
 
 Think about how you can re-use the `save()` method to help with this one.
